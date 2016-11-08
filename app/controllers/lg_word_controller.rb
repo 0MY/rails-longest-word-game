@@ -7,7 +7,6 @@ class LgWordController < ApplicationController
   end
 
   def score
-    byebug
     end_time = Time.now
     attempt = params[:attempt]
     start_time = Time.parse(params[:start_time])
@@ -54,7 +53,7 @@ class LgWordController < ApplicationController
         msg = "not an english word"
       else
         # if OK then display score
-        score = 10 * attempt.length / (guess_time)
+        score = (100 * attempt.length / (guess_time)).round
         msg = "well done"
       end
     end
