@@ -13,6 +13,7 @@ class LgWordController < ApplicationController
     guess_time = end_time - start_time
     grid = params[:grid].split("") # transforms back string into array of chars
     @result = run_game(attempt, grid, guess_time)
+
   end
 
   def generate_grid(grid_size)
@@ -53,7 +54,7 @@ class LgWordController < ApplicationController
         msg = "not an english word"
       else
         # if OK then display score
-        score = (100 * attempt.length / (guess_time)).round
+        score = (1000 * attempt.length / (guess_time)).round
         msg = "well done"
       end
     end

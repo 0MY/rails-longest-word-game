@@ -4,5 +4,6 @@
   <li>Time Taken to answer: <%= @result[:time] %></li>
   <li>Translation: <%= @result[:translation] %></li>
   <li>Your score: <%= @result[:score] %></li>
-  <li>Message: <%= @result[:message] %></li>
+  <li>Message: <%= @result[:message] %></li><br>
+  <%= link_to "Play again", game_path %>
 </ul>
